@@ -1,0 +1,42 @@
+<%- include("partials/header") %>
+
+<h1 style="text-align:center; padding-bottom:50px">
+	User Registration Form
+</h1>
+<form class="container" action="/register" method="POST">
+	
+  	<div class="form-group">
+    	<label for="username">Full Name</label>
+    	<input type="text" class="form-control" id="username" placeholder="Eg:- Sushil Tiwari" name="username">
+  	</div>
+	<div class="form-group">
+    	<label for="mobile">Mobile Number</label>
+    	<input type="number" class="form-control" id="mobile" placeholder="Eg:- 9967XXX456" name="phone">
+  	</div>
+	<div class="row">
+	<div class="col-md-6 col-sm-6 col-xs-6">
+	<div class="form-group">
+    	<label for="house">House Number</label>
+    	<input type="text" class="form-control" id="house" placeholder="Eg:- G-27" name="house">
+  	</div>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-6">
+	<div class="form-group">
+    	<label for="floor">Floor Number</label>
+    	<input type="number" class="form-control" id="floor" placeholder="Eg:- 1" name="floor">
+  	</div>
+	</div>
+	</div>
+  	<div class="form-group">
+    	<label for="exampleInputPassword1">Password</label>
+    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" name="password">
+  	</div>
+	<div style="margin-left:40%">
+		<button type="submit" class="btn btn-success btn-lg">Register Yourself</button>
+	</div>
+</form>
+<div style="margin-left:46%; padding-top:30px">
+	<a href="/" class="btn btn-warning btn-md">Go back</a>
+</div>
+
+<%- include("partials/footer") %>

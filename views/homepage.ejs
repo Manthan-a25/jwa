@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+<script src="/js/pwa.js"></script>
+<div class="display">
+    <div id="content">
+        <h1 id="head"><i class="fa fa-home" id="icon" aria-hidden="true"></i> JWA</h1>
+        <h1>The Janhit Welfare Association</h1>
+        <hr class="mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-6">
+                    <button class="btn btn-primary btn-lg"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                        <a href="/register" class="btn btn-primary btn-lg">
+                            Register User
+                        </a>
+                    </button>
+                </div>
+                <div class="col-12 col-md-6 mb-6">
+                    <button class="btn btn-success btn-lg"><i class="fa fa-user" aria-hidden="true"></i>
+                        <a href="/loginuser" class="btn btn-success btn-lg">
+                            Member Login
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--<div class="row text-center" style="display:flex; flex-wrap:wrap;">-->
+<!--    <% images.forEach(function(image){ %>-->
+<!--        <div class="col-md-3 col-sm-3 ">-->
+<!--            <div class="thumbnail">-->
+<!--                <img src="data:image/<%= image.img.contentType %>;base64,-->
+<!--                     <%= image.img.data.toString('base64') %>" class="d-block w-100">-->
+<!--                <div class="caption">-->
+<!--                    <h2> <%= image.author %> </h2>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    <% }); %>-->
+<!--</div>-->
+
+<%- include("partials/footer") %>
+

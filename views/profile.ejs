@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"-->
+    <!--          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="/profile.css">
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="col-sm-6">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top" >
+        <a class="navbar-brand" href="/dashboard" style="color: white">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/dashboard/sendUser" style="color: white">Send Notification to a User</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/dashboard/getNotification" style="color: white"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/logout" style="color: white">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br/>
+    <section class="profile">
+
+        <main class="profile">
+            <section class="container-fluid">
+                <div class="profile-bg"></div>
+                <div class="profile-image">
+                </div>
+                <section class="profile-info">
+                    <h1 class="name"><%= user.username %></h1>
+                    <h1 class="info">
+                        <% if(user.admin){ %>
+                            Admin
+                        <% } else{ %>
+                            User
+                        <% } %>
+                    </h1>
+                    <h2>ABOUT</h2>
+                    <p>
+                        <span>House no.</span>&nbsp;&nbsp; <%= user.house %><br/>
+                        <span>Floor no.</span>&nbsp;&nbsp; <%= user.floor %>
+                    </p>
+
+                </section>
+            </section>
+            <section class="statistics">
+                <p><strong><%= user.phone %></strong> Phone No.</p>
+                <p><strong><%= user.amount %></strong> Amount to Be paid</p>
+                <p><strong><%= user.paid %></strong> Amount Paid</p>
+            </section>
+        </main>
+
+
+        <div class="container mt-3">
+            <h2 style="display:flex; justify-content: center">User Specific Notification</h2>
+            <br>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" style="display: flex; justify-content: center">
+                <li class="nav-item" style="width: 50%; text-align: center">
+                    <a class="nav-link active" data-toggle="tab" href="#home">Received Notification</a>
+                </li>
+                <li class="nav-item" style="width: 50%; text-align: center">
+                    <a class="nav-link" data-toggle="tab" href="#menu1">Sent Notification</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="home" class="container tab-pane active"><br>
+                    <% feed.forEach(function(Feed){ %>
+                        <div class="card"
+                             style="width: 45rem; background-color: white; border-radius:10px; margin-left: 4%">
+                            <div class="card-body">
+                                <div style="display: flex; flex-direction: row; justify-content: space-between">
+                                    <h5 class="card-title"><%= Feed.title %></h5>
+                                    <% if(Feed.notificationType === "Message") { %>
+                                    <h6 style="color:#294bf8"><%= Feed.notificationType %></h6>
+                                    <% } %>
+                                    <% if(Feed.notificationType === "Complaint") { %>
+                                    <h6 style="color:#ee2b49"><%= Feed.notificationType %></h6>
+                                    <% } if(Feed.notificationType === "Suggestion") { %>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %></h6>
+                                    <% } %>
+                                    <% if(Feed.notificationType === "Payment") { %>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %> Rs. <%=Feed.amount%></h6><br/>
+                                    <a href="/payWithPaytm/middle">Click here to pay</a>
+                                    <% } %>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted"><%= Feed.date.toString().split('GMT')[0] %></h6>
+                                <p class="card-text"><%= Feed.body %></p>
+                            </div>
+                        </div>
+                        <br/>
+                    <% }) %>
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                    <% sent.forEach(function(Feed){ %>
+                        <div class="card"
+                             style="width: 45rem; background-color: white; border-radius:10px; margin-left: 4%">
+                            <div class="card-body">
+                                <div style="display: flex; flex-direction: row; justify-content: space-between">
+                                    <h5 class="card-title"><%= Feed.title %></h5>
+                                    <% if(Feed.notificationType === "Message") { %>
+                                    <h6 style="color:#294bf8"><%= Feed.notificationType %></h6>
+                                    <% } %>
+                                    <% if(Feed.notificationType === "Complaint") { %>
+                                    <h6 style="color:#ee2b49"><%= Feed.notificationType %></h6>
+                                    <% } if(Feed.notificationType === "Suggestion") { %>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %></h6>
+                                    <% } %>
+                                    <% if(Feed.notificationType === "Payment") { %>
+                                    <h6 style="color:#2beec1"><%= Feed.notificationType %> Rs. <%=Feed.amount%></h6><br/>
+                                    <% } %>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted"><%= Feed.date.toString().split('GMT')[0] %></h6>
+                                <p class="card-text"><%= Feed.body %></p>
+                            </div>
+                        </div>
+                        <br/>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

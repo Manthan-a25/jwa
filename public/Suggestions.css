@@ -1,0 +1,45 @@
+.form{
+	width: 80%;
+	margin: 20px auto;
+}
+#details{
+	height:100px;
+}
+/*.jumbotron{
+	padding: 0;
+
+}*/
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+		
+	/*font-weight: normal;*/
+}
+#phone{
+	color: steelblue;
+}
+.contact{
+	color: lightgreen;
+}
+#map{
+	color:red;
+}
+#footer{
+	background-color: #232323;
+	color:white;
+}
+.navbar-light .navbar-brand{
+	color:white;
+}
+.navbar-light .navbar-brand:hover{
+	color:steelblue;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:steelblue;
+}
+.jumbotron{
+	/*background-color: steelblue;*/
+	color:#232323;
+}

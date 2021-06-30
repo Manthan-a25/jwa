@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page1</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <!-- Styling -->
+    <style type="text/css">
+        .content {
+            width: 50%;
+            margin: 100px auto;
+        }
+
+        hr {
+            /*width:400px;*/
+            /*border:1px solid #fBfBfB;*/
+            border-bottom: 1px solid rgba(0, 0, 0, 2);
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="content">
+            <h1 class="d-flex justify-content-center">Make Complaint To </h1>
+            <a href="/dashboard/societyComplaint">
+                <button class="btn btn-lg btn-success btn-block my-3"><i class="fa fa-users" aria-hidden="true"></i>
+                    Society Members
+                </button>
+            </a>
+            <div class="row">
+                <div class="col-4">
+                    <hr>
+                </div>
+                <div class="col-4">
+                    <p class="d-flex justify-content-center">or</p>
+                </div>
+                <div class="col-4">
+                    <hr>
+                </div>
+            </div>
+            <a href="adminComplaints" style="color: white">
+                <button class="btn btn-lg btn-danger btn-block my-3"><i class="fa fa-user-secret"
+                                                                        aria-hidden="true"></i>
+                    Admin
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

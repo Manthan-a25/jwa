@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page3</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <style type="text/css">
+        .form{
+            width: 75%;
+            margin: 100px auto;
+        }
+        body{
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top" >
+        <a class="navbar-brand" href="/dashboard" style="color: white">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/dashboard/sendUser" style="color: white">Send Notification to a User</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/dashboard/getNotification" style="color: white"><i class="fa fa-bell" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="/logout" style="color: white">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="form">
+            <form method="POST" action="/notification/sendComplaintHouse">
+                <div class="form-group">
+
+                    <label for="sub"><strong><h3>To Your Society</h3></strong></label>
+                    <!--                    <input type="text" class="form-control" id="sub" >-->
+                </div>
+
+                <div class="form-group">
+                    <label for="title"><strong>Subject</strong>(Brief description about problem)</label>
+                    <input type="text" class="form-control" id="sub" name="title">
+                </div>
+                <div class="form-group">
+                    <div><label for="body"><strong>Details</strong>(Full explanation regarding problem)</label></div>
+                    <textarea name="body" id="details" class="form-control" rows="10"></textarea>
+                    <!-- <input type="text" class="form-control" id="details" > -->
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+            <a href="/dashboard" class="btn btn-lg btn-danger mt-3">Go Back</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

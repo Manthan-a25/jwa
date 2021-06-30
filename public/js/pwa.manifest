@@ -1,0 +1,16 @@
+{
+  "name": "Progressive Web App example",
+  "short_name": "pwa-tutorial",
+  "description": "Progressive Web App example to be used in conjuction with the article in LogRocket",
+  "icons": [
+    {
+      "src": "/../uploads/icon.jpg",
+      "sizes": "640x640",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#764ABC",
+  "background_color": "#764ABC"
+}

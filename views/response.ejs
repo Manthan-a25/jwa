@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Merchant Check Out Page</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="receipt">
+    <!--    <% if (resultData == 'true') { %>
+    <center><h1>validation succesfull</h1></center>
+    <% }else
+    { %>
+    <% } %>-->
+    <table class="table-receipt">
+        <thead>
+        <tr>
+            <th class="th-header"
+                colspan="2">PAYMENT RECEIPT
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (name in responseData) {
+        %>
+        <% if(name !== "CHECKSUMHASH"){ %>
+        <tr>
+            <td class="td-title"><%= name %></td>
+            <td class="td-content"><%= responseData[name] %></td>
+        </tr>
+        <% } %>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+
+<a href="/dashboard">Go Back</a>
+
+</body>
+</html>

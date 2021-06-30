@@ -1,0 +1,43 @@
+.display{
+	width:100vw;
+	height: 100vh;
+	background-image: url(https://images.unsplash.com/photo-1535827841776-24afc1e255ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+	background-size: 100% 100%;
+	background-position: center;
+}
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+#head{
+	font-size:4em;
+}
+#content{
+	color:white;
+	text-align: center;
+	padding-top: 15%;
+	text-shadow:1px 4px 4px black;
+}
+hr{
+	width:400px;
+	border:1px solid #fBfBfB;
+	border-bottom:1px solid rgba(0,0,0,2);
+}
+h1{
+	font-weight: 500;
+	font-size: 3em;
+}
+.navbar-light .navbar-brand{
+	color:steelblue;
+}
+.navbar-light .navbar-brand:hover{
+	color:steelblue;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:steelblue;
+}
+.change{
+	color:steelblue;
+}

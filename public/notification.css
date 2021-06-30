@@ -1,0 +1,56 @@
+.content{
+	width:45rem;
+	margin:20px auto;
+	box-shadow: 1px 1px 10px 2px #333;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.header{
+	background: orange;
+	color:white;
+	padding:15px 0px;
+}
+.moving-body{
+	padding: 4px;
+	height: 500px;
+}
+.movong-para{
+	text-align: center;
+	padding: 4px;
+	border-bottom: 2px solid #afafaf;
+}
+body{
+	font-family: 'Mulish', sans-serif;
+	font-weight: normal;
+}
+#phone{
+	color: steelblue;
+}
+.contact{
+	color: lightgreen;
+}
+#map{
+	color:red;
+}
+#footer{
+	background-color: #232323;
+	color:white;
+}
+.navbar-light .navbar-brand{
+	color:white;
+}
+.navbar-light .navbar-brand:hover{
+	color:steelblue;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:steelblue;
+}
+#active{
+	color:steelblue;
+}
+#active:hover{
+	color:steelblue;
+}

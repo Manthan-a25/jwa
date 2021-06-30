@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestions</title>
+
+    <!-- Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- normal css -->
+    <link rel="stylesheet" href="/Suggestions.css">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/sendUser">Send Notification to a User</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br/>
+<br/>
+<div class="jumbotron p-2 mt-3">
+    <div class="container-fluid">
+        <h1 class="display-4"><i class="fa fa-question-circle" aria-hidden="true"></i> Suggestions</h1>
+        <p class="lead">Welcome to JWA's suggestions' section</p>
+        <hr class="my-4">
+        <p>Here you can suggest various things related to events, infrastructure and a lot more.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="form">
+            <form method="POST" action="/notification/sendSuggestion">
+                <div class="form-group">
+                    <label for="title"><strong>Subject</strong>(Brief description about problem)</label>
+                    <input type="text" class="form-control" id="sub" name="title">
+                </div>
+                <div class="form-group">
+                    <div><label for="body"><strong>Details</strong>(Full explanation regarding problem)</label></div>
+                    <textarea name="body" id="details" class="form-control" rows="10"></textarea>
+                    <!-- <input type="text" class="form-control" id="details" > -->
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <Footer -->
+<footer class="page-footer font-small mt-4 pt-4" id="footer">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 mb-3">
+                <a href="/aboutus"> <h5 class="text-uppercase">About Us</h5></a>
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i> <span class="contact">Email</span></h5>
+                <h5>janhitwelfare27@gmail.com</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-phone" id="phone" aria-hidden="true"></i> <span class="contact">Contact Us</span></h5>
+                <h5>+91 9800 546 749</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5 ><i class="fa fa-map-marker" id="map" aria-hidden="true"></i> <span class="contact">JWA</span></h5>
+                <h5>227, Platinum Techno Park, Sector 69B, vashi, Navi Mumbai - 400703.</h5>
+            </div>
+        </div>
+</footer>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

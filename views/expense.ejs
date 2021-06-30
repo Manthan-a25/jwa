@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>paymentForm</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <style type="text/css">
+        .form {
+            width: 75%;
+            margin: 100px auto;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        hr {
+            /*width:400px;*/
+            border: 1px solid #fBfBfB;
+            border-bottom: 1px solid rgba(0, 0, 0, 2);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="form">
+            <h1 class="d-flex justify-content-center">Fill in the payment credentials</h1>
+            <hr class="my-4">
+            <form method="POST" action="/payWithPaytm/expense">
+                <div class="form-group">
+                    <label for="amount"><strong>Amount</strong></label>
+                    <input type="text" class="form-control" id="amount" placeholder="Enter amount" name="amount">
+                </div>
+                <div class="form-group">
+                    <label for="re"><strong>Receiver</strong></label>
+                    <input type="text" class="form-control" id="re" placeholder="Enter Name/Company of Receiver" name="receiver">
+                </div>
+                <div class="form-group">
+                    <label for="rn"><strong>Mobile Number of Receiver</strong></label>
+                    <input type="text" class="form-control" id="rn" placeholder="Enter the mobile number of Receiver" name="receiver_num">
+                </div>
+                <div class="form-group">
+                    <label for="desc"><strong>Description</strong></label>
+                    <textarea placeholder="reason for payment" id="desc" class="form-control" rows="3"
+                              name="desc"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Pay Now</button>
+                <a href="/dashboard" class="btn btn-lg btn-success mt-3">Go back</a>
+                <a href="/usertransaction" class="btn btn-lg btn-success mt-3">Show My Transactions</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notifications</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/notification.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/sendUser">Send Notification to a User</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br/>
+<div class="jumbotron p-4 mt-3">
+    <h1><i class="fa fa-home" id="icon" aria-hidden="true"></i> JWA</h1>
+    <h1>The Janhit Welfare Association</h1>
+</div>
+<div class="content">
+    <h1 class="header" align="center">Notifications</h1>
+    <!--    <marquee behavior="scroll" direction="up" scrollamount="2"-->
+    <!--             onmouseover="this.setAttribute('scrollamount', 0, 0); this.stop();"-->
+    <!--             onmouseout="this.setAttribute('scrollamount', 2, 0); this.start();"-->
+    <!--             class="moving-body">-->
+    <% notification.forEach(function(noti) { %>
+        <div style="display: flex; justify-content: center">
+            <% if (noti.notificationType === 'Complaint') { %>
+                <div class="card" style="width: 40rem;margin-bottom: 10px">
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <h5 class="card-title"><span
+                                        style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></h5>
+                            <h5 class="card-title" style="color: #ee2b49"><%= noti.notificationType %></h5>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Votes: <%= noti.votes %></h6>
+                        <p class="card-text"><%= noti.body %></p>
+                        <a href="/notification/upVote?id=<%= noti._id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;LIKE</a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="card" style="width: 40rem;margin-bottom: 10px">
+                    <div class="card-body">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <h5 class="card-title"><span
+                                        style="font-weight: bold">Title:</span>&nbsp;&nbsp;&nbsp; <%= noti.title %></h5>
+                            <h5 class="card-title" style="color: #07c5f6"><%= noti.notificationType %></h5>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Votes: <%= noti.votes %></h6>
+                        <p class="card-text"><%= noti.body %></p>
+                        <div style="display:flex;justify-content: space-evenly">
+                            <a href="/notification/upVote?id=<%= noti._id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;LIKE</a>
+                        </div>
+                    </div>
+                </div>
+
+            <% } %>
+        </div>
+    <% }); %>
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--        <p class="movong-para">Delhi Technological University, formerly known as the Delhi College of Engineering is a public university located in New Delhi, India</p>-->
+    <!--    </marquee>-->
+</div>
+<!-- <Footer -->
+<footer class="page-footer font-small mt-4 pt-4" id="footer">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 mb-3">
+                <a href="/aboutus"><h5 class="text-uppercase">About Us</h5></a>
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i> <span class="contact">Email</span></h5>
+                <h5>janhitwelfare27@gmail.com</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-phone" id="phone" aria-hidden="true"></i> <span class="contact">Contact Us</span>
+                </h5>
+                <h5>+91 9800 546 749</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-map-marker" id="map" aria-hidden="true"></i> <span class="contact">JWA</span></h5>
+                <h5>227, Platinum Techno Park, Sector 69B, vashi, Navi Mumbai - 400703.</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

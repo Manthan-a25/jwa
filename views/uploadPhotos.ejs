@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Photos</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body{
+            font-family: 'Mulish', sans-serif;
+            font-weight: normal;
+        }
+        .form{
+            width: 60%;
+            margin:100px auto;
+        }
+        .card{
+            width: 60%;
+            margin: 50px auto;
+        }
+        .navbar-light .navbar-brand{
+            color:white;
+        }
+        .navbar-light .navbar-brand:hover{
+            color:steelblue;
+        }
+        .navbar-light .navbar-nav .nav-link{
+            color:white;
+        }
+        .navbar-light .navbar-nav .nav-link:hover{
+            color:steelblue;
+        }
+        #phone{
+            color: steelblue;
+        }
+        .contact{
+            color: lightgreen;
+        }
+        #map{
+            color:red;
+        }
+        #footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #232323;
+            color:white;
+        }
+       /* @media (max-width: 991px){
+            #footer{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: #232323;
+                color:white;
+            }
+        }   */
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/sendUser">Send Notification to a User</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="form">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile03" name="image">
+                        <label class="custom-file-label" for="inputGroupFile03" >Choose file</label>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-lg btn-success mt-3 mr-3"> Upload Photo</button>
+                    <a href="/" class="btn btn-lg btn-danger mt-3 ">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <Footer -->
+<footer class="page-footer font-small mt-4 pt-4" id="footer">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 mb-3">
+                <a href="/aboutus"> <h5 class="text-uppercase">About Us</h5></a>
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i> <span class="contact">Email</span></h5>
+                <h5>janhitwelfare27@gmail.com</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-phone" id="phone" aria-hidden="true"></i> <span class="contact">Contact Us</span></h5>
+                <h5>+91 9800 546 749</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5 ><i class="fa fa-map-marker" id="map" aria-hidden="true"></i> <span class="contact">JWA</span></h5>
+                <h5>227, Platinum Techno Park, Sector 69B, vashi, Navi Mumbai - 400703.</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

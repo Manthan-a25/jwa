@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DashBoard</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/dashboard.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/sendUser">Send Notification to a User</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/dashboard/getNotification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="/logout">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<img src="http://societyteck.com/wp-content/uploads/2018/11/banner02.jpg" style="height: 10%">
+<div class="d-flex justify-content-center my-4">
+    <h2>Welcome <span id="username"><%= user.username %></span> from <span id="Hno"><%= user.house %></span></h2>
+</div>
+<div class="container">
+    <div class="row">
+        <a class="col-12 col-md-4 col-sm-12 box" id="b1" style="color:white" href="/dashboard/userInfo">
+            <i class="fa fa-user-circle" id="icon" aria-hidden="true"></i>
+            <h2>User's Info</h2>
+        </a>
+        <a class="col-12 col-md-4 col-sm-12 box" id="b2" style="color:white" href="/gallery">
+            <i class="fa fa-camera-retro" id="icon" aria-hidden="true"></i>
+            <h2>Upload photos</h2>
+        </a>
+        <a class="col-12 col-md-4 col-sm-12 box" id="b3"   href="/dashboard/complaints">
+                <i class="fa fa-list-alt" id="icon" aria-hidden="true"></i>
+                <h2>Complaints</h2>
+        </a>
+
+    </div>
+    <div class="row">
+        <a class="col-12 col-md-4 box col-sm-12" id="b4" style="color:white" href="/dashboard/getSuggestion">
+            <i class="fa fa-question-circle" aria-hidden="true" id="icon"></i>
+            <h2>Suggestions</h2>
+        </a>
+        <a class="col-12 col-md-4 col-sm-12 box" id="b5" style="color:white" href="/payWithPaytm/middle">
+            <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i>
+            <h2>User's Transactions</h2>
+        </a>
+        <a class="col-12 col-md-4 col-sm-12 box" id="b6" style="color:white" href="/societytransaction">
+            <i class="fa fa-money" aria-hidden="true" id="icon"></i>
+            <h2>Society's Transactions</h2>
+        </a>
+    </div>
+    <% if(currentUser.admin){ %>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <a href="/dashboard/getPaymentNotification" class="btn btn-lg btn-success btn-block mt-4"><i class="fa fa-commenting-o" aria-hidden="true"></i> Send Payment Notifications</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="/payWithPaytm/expense" class="btn btn-lg btn-danger btn-block mt-4"><i class="fa fa-cc-visa" aria-hidden="true"></i> Make Payment</a>
+            </div>
+        </div>
+    <% } %>
+</div>
+<!-- <Footer -->
+<footer class="page-footer font-small mt-4 pt-4" id="footer">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-4 mt-md-0 mt-3 mb-3">
+                <a href="/aboutus"><h5 class="text-uppercase">About Us</h5></a>
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i> <span class="contact">Email</span></h5>
+                <h5>janhitwelfare27@gmail.com</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-phone" id="phone" aria-hidden="true"></i> <span class="contact">Contact Us</span>
+                </h5>
+                <h5>+91 9800 546 749</h5>
+            </div>
+            <div class="col-md-4 mb-md-0 mb-3">
+                <h5><i class="fa fa-map-marker" id="map" aria-hidden="true"></i> <span class="contact">JWA</span></h5>
+                <h5>227, Platinum Techno Park, Sector 69B, vashi, Navi Mumbai - 400703.</h5>
+            </div>
+        </div>
+</footer>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
